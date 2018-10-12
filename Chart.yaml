@@ -1,7 +1,4 @@
 apiVersion: v1
-name: helm-vsts-agent
+name: pipelines-agent
 version: 1.0.0
-description: Helm chart for Visual Studio Team Services agent pool
-maintainers:
-  - name: Microsoft Social Engagement
-    email: msefoundations@microsoft.com
+description: Helm chart for Azure DevOps agent pool
