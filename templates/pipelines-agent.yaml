@@ -17,7 +17,8 @@ spec:
       labels:
         app: {{ .Chart.Name }}
     spec:
-      serviceAccountName: {{ .Values.serviceAccountName | default "default" }}
+      serviceAccountName: {{ .Values.serviceAccountName | default "pipelines-agent" }}
+      automountServiceAccountToken: true
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

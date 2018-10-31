@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: pipelines-agent-binding
+  namespace: {{ .Release.Namespace }}
+subjects:
+- kind: ServiceAccount
+  name: {{ .Values.serviceAccountName | default "pipelines-agent" }}
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: pipelines-agent-manager
+  apiGroup: rbac.authorization.k8s.io
