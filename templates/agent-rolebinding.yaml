@@ -1,4 +1,5 @@
-kind: RoleBinding
+{{- if .Values.createNewServiceAccount }}
+kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: pipelines-agent-binding
@@ -11,3 +12,4 @@ roleRef:
   kind: Role
   name: pipelines-agent-manager
   apiGroup: rbac.authorization.k8s.io
+{{- end }}
